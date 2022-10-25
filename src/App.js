@@ -1,25 +1,23 @@
-import logo from './logo.svg';
+import {BrowserRouter, Routes, Route} from 'react-router-dom'
+import Layout from './components/layouts/Layout.js';
+import MyBookings from './components/pages/MyBookings.js';
+import Login from './components/pages/Login.js';
+import PageNotFound from './components/pages/404.js'
+
 import './App.css';
 
-function App() {
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Layout>
+        <Routes>
+          <Route path='/' element={<MyBookings/>}></Route>
+          <Route path='/login' element={<Login/>}></Route>
+          <Route path='/*' element={<PageNotFound/>}></Route>
+        </Routes>
+      </Layout>
+    </BrowserRouter>
   );
 }
 
-export default App;
+

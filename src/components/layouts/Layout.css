@@ -1,0 +1,32 @@
+h1 {
+    padding-left: 30px;;
+}
+div#root {
+    width: 100%;
+    background: rgb(251, 247, 244);
+    min-height: 100vh;
+}
+
+div#root div.grid-container {
+    background: whitesmoke;
+    display: grid;
+    grid-template-columns: 240px 1fr;
+    grid-template-rows: 60px 1fr 60px;
+    grid-template-areas:
+      "nav header"
+      "nav main"
+      "nav footer";
+    width: 96%;
+    height: 96vh;
+    padding: 40px;
+    
+   
+  
+}
+
+
+div#root div.grid-container > main {
+    padding: 30px;
+    width: 100%;
+    
+}
