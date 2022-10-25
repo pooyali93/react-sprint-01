@@ -1,32 +1,26 @@
 import { NavLink } from "react-router-dom";
-import { FaUserCircle } from "react-icons/fa";
+//import { FaUserCircle } from "react-icons/fa";
 
 import './Navbar.css';
 
 export default function Navbar() {
     // Initialisation ---------
-    //  States ---------
-    // Context ---------
+    // Properties ---------
+    //  Hooks ---------
+    // Contect ---------
     // Methods ---------
-const getLinkStyle = ({isActive}) => (isActive ? 'navSelected' : null);
+    const getLinkStyle = ({isActive}) => (isActive ? 'navSelected' : null);
     // View ---------
     return (
-        <nav>     
-            <div className="login">
-                <FaUserCircle size={70} />
-            </div>       
+        <nav >
             <div className="navItem">
-                <NavLink to="/" className={getLinkStyle}>My Bookings</NavLink>
+                <NavLink to="/" className={getLinkStyle}>Bookings</NavLink>
             </div>
 
             <div className="navItem">
-                <NavLink to="/login" className={getLinkStyle}>Sign in</NavLink>
+                <NavLink to="/Login" className={getLinkStyle}>Login</NavLink>
             </div>
         </nav>
-
-
-
-        
     )
 
 }

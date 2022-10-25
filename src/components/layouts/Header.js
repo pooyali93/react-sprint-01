@@ -1,6 +1,7 @@
+import { Link } from 'react-router-dom'
 import './Header.css'
 
-function Header(props) {
+export default function Header() {
     // Properties ---------
     //  Hooks ---------
     // Contect ---------
@@ -8,10 +9,16 @@ function Header(props) {
     // View ---------
     return (
         <header>
-            <p>Header</p>
+            <Link to="/">
+            <img src="https://img.icons8.com/small/50/undefined/gender-neutral-user.png" alt=""></img>
+            </Link>
+            <Link to="/">
+             <h1>Car Dealership</h1>
+            </Link>
+            <div className="login">
+                <p>Welcome Pooya</p>
+            </div>
         </header>
     )
 
 }
-
-export default Header;

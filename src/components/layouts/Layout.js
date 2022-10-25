@@ -1,26 +1,26 @@
 import Header from './Header.js'
 import Navbar from './Navbar.js';
-import Main from './Main.js';
 import Footer from './Footer.js'
 
 import './Layout.css';
 
 
-function Layout() {
+function Layout(props) {
     // Properties ---------
     //  Hooks ---------
     // Contect ---------
     // Methods ---------
     // View ---------
     return (
-        <div className='grid-container'>
-            <Header />
-            <Navbar />
-            <Main/>
-            
+        <div className='centerWrapper'>
+          <Header />
+          <Navbar />
+            <main>
+                {props.children}
+            </main>
             <Footer/>
         </div>
-    )
+    );
 
 }
 

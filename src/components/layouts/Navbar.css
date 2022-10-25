@@ -1,15 +1,7 @@
 nav {
-    grid-area: nav;
-    background-color: #1e1a22;
-    border-top-left-radius: 15px;
-    border-bottom-left-radius: 15px;
-}
-
-nav div.login {
-    padding: 40px 0;
     display: flex;
-    justify-content: center;
-    color: #fff;
+    overflow: hidden;
+    background-color:#1D3557 ;
 }
 
 nav div.navItem {
@@ -26,8 +18,9 @@ nav div.navItem a {
     text-decoration: none;
 }
 
-nav div.navItem a.navSelected {
+nav div.navItem .navSelected:active {
     color:#A8DADC;
+    padding: 10px;
 
     
 }
