@@ -1,17 +1,25 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import callFetch from "../api/API";
 
 export default function MyBookings() {
     // Initialisation ---------
-    const loggedinUserID = 4;
-    const endpoint = `/bookings/${loggedinUserID}`;
+    const loggedinUserID = 9;
+    const endpoint = `/bookings/sales/${loggedinUserID}`;
     // States ---------
-    const [bookings, setBookins] = useState(null);
-    const [loadingMessage, setLoadingMessage] = useState("Loading Bookings...");
+    const [bookings, setBookings] = useState(null);
+    const [loadingMessage, setLoadingMessage] = useState('Loading Bookings...');
     // Context ---------
     // Methods ---------
-    const URL = 'http://localhost:5000/api';
-    const endpointAddress = URL + endpoint;
-    fetch(endpointAddress);
+    const apiCall = async (endpoint) => {
+        const response = await callFetch(endpoint, 'GET');
+        response.isSuccess
+        ? setBookings(response.result)
+        : setLoadingMessage(response.message)
+        
+    }
+
+    useEffect(() => {apiCall(endpoint)}, [endpoint]);
+
     // View ---------
     return (
 
@@ -23,7 +31,7 @@ export default function MyBookings() {
             : bookings.length ===0
                 ? <p>You have no booking</p>
                 : bookings.map ((booking) => 
-                    <p>{booking.bookngsId} {booking.DateBooked}</p>
+                    <p key={booking.BookingID}>{booking.BookingID} {booking.VehicleMake} {booking.VehicleModel} {booking.VehicleYear}</p>
                  )
         }
 

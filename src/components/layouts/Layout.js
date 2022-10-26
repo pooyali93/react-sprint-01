@@ -12,10 +12,10 @@ function Layout(props) {
     // Methods ---------
     // View ---------
     return (
-        <div className='centerWrapper'>
+        <div className='container'>
           <Header />
           <Navbar />
-            <main>
+            <main className='main-layout'>
                 {props.children}
             </main>
             <Footer/>

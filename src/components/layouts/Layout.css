@@ -1,6 +1,10 @@
 h1 {
     padding-left: 30px;;
 }
+
+p {
+    padding-left: 30px;;
+}
 div#root {
     width: 100%;
     background: #fff;
@@ -9,7 +13,7 @@ div#root {
     justify-content: center;
 }
 
-div#root div.centerWrapper {
+div#root div.container {
     background: whitesmoke;
     width: 100%;
     max-width: 1000px;
@@ -17,7 +21,8 @@ div#root div.centerWrapper {
     grid-template-rows: auto auto 1fr auto;
 }
 
-div#root div.centerWrapper > main {
+div#root div.container > main.main-layout {
     padding: 30px 0;
     width: 100%;
+    margin-left: 10px;
 }
